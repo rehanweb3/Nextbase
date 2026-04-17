@@ -1,0 +1,22 @@
+ather_main@ather-root:~/DBCraft-2.0$ git pull && \
+docker compose -f postgres.yml stop dbcraft-proxy || true && \
+docker compose -f postgres.yml rm -f dbcraft-proxy || true && \
+docker compose -f postgres.yml --profile expose up -d dbcraft-proxy
+Already up to date.
+[+] stop 1/1
+ ✔ Container dbofather-proxy Stopped                                                                                                                      0.2s
+Going to remove dbofather-proxy
+[+] remove 1/1
+ ✔ Container dbofather-proxy Removed                                                                                                                      0.0s
+[+] up 3/3
+ ✔ Container dbofather-db     Healthy                                                                                                                     1.2s
+ ✔ Container dbofather-pooler Running                                                                                                                     0.0s
+ ✔ Container dbofather-proxy  Started                                                                                                                     1.5s
+ather_main@ather-root:~/DBCraft-2.0$ docker ps
+CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS                   PORTS                                            NAMES
+1179aa3162b0   haproxy:alpine             "docker-entrypoint.s…"   36 seconds ago   Up 34 seconds            0.0.0.0:5432->5432/tcp, 0.0.0.0:6543->6543/tcp   dbofather-proxy
+906ce4531c97   dbcraft-dbcraft-client     "/docker-entrypoint.…"   8 minutes ago    Up 7 minutes             0.0.0.0:3000->80/tcp                             dbofather-client
+225888fadede   dbcraft-dbcraft-server     "docker-entrypoint.s…"   8 minutes ago    Up 7 minutes             127.0.0.1:3001->3001/tcp                         dbofather-server
+06901b8fe158   edoburu/pgbouncer:latest   "/entrypoint.sh /usr…"   8 minutes ago    Up 7 minutes             127.0.0.1:16543->5432/tcp                        dbofather-pooler
+db3277e54827   postgres:15                "docker-entrypoint.s…"   8 minutes ago    Up 7 minutes (healthy)   127.0.0.1:15432->5432/tcp                        dbofather-db
+ather_main@ather-root:~/DBCraft-2.0$ 

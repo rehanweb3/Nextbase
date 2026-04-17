@@ -1,0 +1,50 @@
+ ✔ Container dbofather-proxy Removed                                                                                                                      0.0s
+[+] Building 6.2s (12/12) FINISHED                                                                                                                            
+ => [internal] load local bake definitions                                                                                                               0.0s
+ => => reading from stdin 556B                                                                                                                           0.0s
+ => [internal] load build definition from Dockerfile                                                                                                     0.0s
+ => => transferring dockerfile: 260B                                                                                                                     0.0s
+ => [internal] load metadata for docker.io/library/node:20-alpine                                                                                        0.7s
+ => [internal] load .dockerignore                                                                                                                        0.0s
+ => => transferring context: 87B                                                                                                                         0.0s
+ => [1/7] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293                                  0.1s
+ => => resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293                                  0.0s
+ => [internal] load build context                                                                                                                        0.0s
+ => => transferring context: 35.79kB                                                                                                                     0.0s
+ => CACHED [2/7] RUN apk add --no-cache postgresql-client docker-cli docker-compose                                                                      0.0s
+ => CACHED [3/7] WORKDIR /usr/src/app                                                                                                                    0.0s
+ => CACHED [4/7] COPY package*.json ./                                                                                                                   0.0s
+ => CACHED [5/7] RUN npm install                                                                                                                         0.0s
+ => [6/7] COPY . .                                                                                                                                       0.2s
+ => ERROR [7/7] RUN npm run build                                                                                                                        5.0s
+------                                                                                                                                                        
+ > [7/7] RUN npm run build:                                                                                                                                   
+0.495                                                                                                                                                         
+0.495 > server@1.0.0 build
+0.495 > tsc
+0.495 
+4.852 src/routes/admin.ts(144,23): error TS2304: Cannot find name 'isDockerAvailable'.
+4.853 src/routes/admin.ts(253,23): error TS2304: Cannot find name 'isDockerAvailable'.
+4.853 src/routes/admin.ts(343,14): error TS2304: Cannot find name 'isDockerAvailable'.
+------
+[+] up 0/1
+ ⠙ Image dbcraft-dbcraft-server Building                                                                                                                  6.3s
+Dockerfile:11
+
+--------------------
+
+   9 |     
+
+  10 |     COPY . .
+
+  11 | >>> RUN npm run build
+
+  12 |     
+
+  13 |     EXPOSE 3001
+
+--------------------
+
+failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+
+ather_main@ather-root:~/DBCraft-2.0$ 
