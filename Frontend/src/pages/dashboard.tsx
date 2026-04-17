@@ -72,12 +72,9 @@ export default function Dashboard() {
               {/* Mobile sidebar trigger */}
               <MobileSidebarTrigger />
 
-              {/* Brand (shown on mobile only since desktop has sidebar) */}
-              <div className="flex items-center gap-2.5 lg:hidden">
-                <div className="w-8 h-8 rounded-lg overflow-hidden shrink-0">
-                  <img src="/p.png" alt="Nextbase" className="w-full h-full object-cover" />
-                </div>
-                <span className="font-bold text-sm tracking-tight text-foreground">Nextbase</span>
+              {/* Page title on mobile */}
+              <div className="flex items-center gap-2 lg:hidden">
+                <span className="font-semibold text-sm tracking-tight text-foreground">Database Metrics</span>
               </div>
 
               {/* Desktop title — hidden on mobile */}

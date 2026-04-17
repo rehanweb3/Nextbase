@@ -219,7 +219,7 @@ export function SqlCodeEditor({ onRun, initialValue = "", value: controlledValue
             </div>
 
             {/* Editor Container */}
-            <div className="relative flex-1 group overflow-auto scrollbar-hide bg-background">
+            <div className="relative flex-1 group overflow-auto bg-background" style={{ scrollbarWidth: 'thin', scrollbarColor: 'hsl(var(--muted-foreground)/.2) transparent' }}>
                 <div className="flex min-w-full w-fit min-h-full">
                     {/* Line Numbers */}
                     <div className="sticky left-0 top-0 bottom-0 w-10 bg-background border-r border-border/50 flex flex-col items-center pt-4 pointer-events-none select-none z-20 shrink-0">
