@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Frontend/public/dark.png" alt="Nextbase" height="60" />
+  <img src="Frontend/public/white.png" alt="Nextbase" height="60" />
 </p>
 
 <p align="center">
