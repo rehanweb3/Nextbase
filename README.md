@@ -59,7 +59,7 @@ Before you begin, make sure the following are installed on your server:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/rehanweb3/DBCraft-2.0.git nextbase
+git clone https://github.com/rehanweb3/Nextbase.git nextbase
 cd nextbase
 ```
 
